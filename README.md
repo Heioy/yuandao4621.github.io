@@ -13,8 +13,9 @@
 - [x] [谈谈ls命令的执行效率](./Linux/谈谈ls命令的执行效率.md)
 - [x] [VDO的安装与使用](./Linux/VDO的安装与使用.md)
 - [x] [which和whereis的区别](./Linux/which和whereis的区别.md)
-- [ ] [logrotate-Linux下的日志切割技术](./Linux/logrotate-Linux下的日志切割技术.md)
+- [x] [logrotate-Linux下的日志切割技术](./Linux/logrotate-Linux下的日志切割技术.md)
 - [ ] [Linux下的inode到底是什么](./Linux/Linux下的inode到底是什么.md)
+- [ ] [Linux多链路聚合技术](./Linux/Linux多链路聚合技术.md)
 
 
 
