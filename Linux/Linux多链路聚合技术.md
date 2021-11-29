@@ -29,9 +29,9 @@
 - `multipathd`：`multipath` 守护进程，若出现故障路径、`multipathd` 可能会启动路径组切换。对 `/etc/multipathd.conf` 配置文件的任何修改，都需要重新启动 `multipathd` 服务。
 - `kpartx`：为设备分区生成设备映射器。`kpartx` 命令包含在自己的软件包中，但是 `DM Multipath` 软件包需要依赖它
 
-#### `安装&配置
+#### 安装&配置
 
-在 Linux RedHat 系列中，`multipath` 的软件包膜人已经安装，你可以通过 `rpm -qa | grep device-mapper`查看
+在 Linux RedHat 系列中，`multipath` 的软件包默认已经安装，你可以通过 `rpm -qa | grep device-mapper`查看
 
 ```bash
 [root@server ~]# rpm -qa | grep device-mapper
@@ -61,7 +61,7 @@ dm_mod                124501  9 dm_multipath,dm_log,dm_mirror
 
 启动 `multipath` 服务
 
-(PS: 第一次启动服务会失败，是因为没有配置multipath)
+(PS: 第一次启动服务会失败，是因为没有缺少multipath的配置文件)
 
 ```bash
 [root@server ~]# systemctl start multipathd.service
@@ -319,7 +319,9 @@ create: 后面的 `3600a0b80001327510000009a436215ec` 即为创建的多路径�
 [root@server ~]# multipath -F
 ```
 
+以上列出了3条 `multipath` 日常使用的命令，而这也是我日常使用最频繁的命令，其他的命令我也还在学习🤪。
 
+#### 最后
 
-
+当你通过 `multipath` 创建了多路径设备后，你可以像使用普通设备那样使用它。创建分区、挂载文件系统、创建系统卷，具体的功能还需要你去探索。
 
