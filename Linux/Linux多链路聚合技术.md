@@ -11,7 +11,7 @@
 使用 `multipath`，不仅可以获得 链路上的冗余功能，而且可以充分发挥存储设备的性能。以下为 `multipath` 多路径的功能
 
 - 冗余：`DM Multipath` 提供两种配置模式 `主动` 和 `被动`，并可以在两种模式下切换用来实现故障转移。在两种模式下，只有一半的路径在每次进行 I/O时会被使用。若一条 I/O 路径的任一元素(电缆、交换器、控制器)出现故障后，`multipath` 将切换到另一条正常的路径上。
-- 性能提升：`multipath` 提供的两种配置模式，可以将 I/O 以`轮循(round-robin)` 的方式分布到所有的路径中。在某些配置汇总，`multipath` 能够检测 I/O 路径的负载，并重新懂台平衡负载。
+- 性能提升：`multipath` 提供的两种配置模式，可以将 I/O 以`轮循(round-robin)` 的方式分布到所有的路径中。在某些配置中，`multipath` 能够检测 I/O 路径的负载，并重新动态平衡负载。
 
 ![带两个RAID设备的主/被动多路径配置](../../../WorkSpace/notes/img/multipath-1.png)
 
@@ -61,7 +61,7 @@ dm_mod                124501  9 dm_multipath,dm_log,dm_mirror
 
 启动 `multipath` 服务
 
-(PS: 第一次启动服务会失败，是因为没有缺少multipath的配置文件)
+(PS: 第一次启动服务会失败，是因为缺少multipath的配置文件)
 
 ```bash
 [root@server ~]# systemctl start multipathd.service
