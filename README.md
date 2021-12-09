@@ -16,6 +16,7 @@
 - [x] [logrotate-Linux下的日志切割技术](./Linux/logrotate-Linux下的日志切割技术.md)
 - [x] [Linux下的inode到底是什么](./Linux/Linux下的inode到底是什么.md)
 - [x] [Linux多链路聚合技术](./Linux/Linux多链路聚合技术.md)
+- [ ] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
 
 
 
@@ -28,6 +29,8 @@
 - [ ] [GRUB启动引导项是怎么工作的](./操作系统/GRUB启动引导项是怎么工作的.md)
 
 ### Python
+
+- [ ] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.ms)
 
 
 
