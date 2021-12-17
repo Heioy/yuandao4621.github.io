@@ -1,0 +1,23 @@
+default:
+  image: ubuntu:20.04
+
+stages:
+  - build
+  - test
+
+pages:
+  stage: deploy
+  script:
+    - echo 'Nothing to do...'
+  artifacts:
+    paths:
+    - public/
+  only:
+  - master
+
+show:
+  stage: test
+  script:
+    - echo "show pages"
+
+

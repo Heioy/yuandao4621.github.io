@@ -4,6 +4,7 @@
 
 [toc]
 
+---
 ### Linux
 
 - [x] [Linux文件系统的演变](./Linux/Linux文件系统的演变.md)
@@ -18,8 +19,7 @@
 - [x] [Linux多链路聚合技术](./Linux/Linux多链路聚合技术.md)
 - [ ] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
 
-
-
+---
 ### OperatorSystem
 
 - [ ] [简述操作系统](./操作系统/简述操作系统.md)
@@ -28,12 +28,12 @@
 - [ ] [进程的3种状态](./操作系统/进程的3种状态.md)
 - [ ] [GRUB启动引导项是怎么工作的](./操作系统/GRUB启动引导项是怎么工作的.md)
 
+---
 ### Python
 
-- [ ] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.ms)
+- [ ] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.md)
 
-
-
-### Tools
+---
+### Problem
 
 - [ ] [基于MacBook m1本地搭建Gitlab服务器](./tools/基于MacBook m1本地搭建Gitlab服务器.md)
