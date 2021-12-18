@@ -31,7 +31,7 @@
 ---
 ### Python
 
-- [ ] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.md)
+- [x] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.md)
 
 ---
 ### Problem
