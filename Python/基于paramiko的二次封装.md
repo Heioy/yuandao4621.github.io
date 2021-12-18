@@ -94,10 +94,14 @@ class Connect(object):
 将ssh会话保存到会话池中
 
 ```python
+#!/usr/bin/env python3
+# encoding=utf-8
+
+import os
 import socket
 import paramiko
 from collections import deque
-from paramiko import SSHExpection
+from paramiko.ssh_exception import SSHException
 from paramiko.ssh_exception import NoValidConnectionsError, AuthenticationException
 from eventlet import pools
 
@@ -124,13 +128,13 @@ class SSHPool(pools.Pool):
         self.timeout = timeout
         super(SSHPool, self).__init__(**kwargs)
         
-    def _create(self):
+    def create(self):
         try:
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             
             if self.password:
-                ssh.connect(self.ip, 
+                client.connect(self.ip, 
                             port=self.port,
                             username=self.username,
                             password=self.password,
@@ -140,18 +144,17 @@ class SSHPool(pools.Pool):
                 if isinstance(self.privatekey, paramiko.rsakey.RSAKey):
                     key = self.privatekey
                 else:
-                	keyfile = os.path.expanduser(self.privatekey)
+                    keyfile = os.path.expanduser(self.privatekey)
                     key = paramiko.RSAKey.from_private_key_file(keyfile)
-                
-                ssh.connect(self.ip,
-                            port=sel.port,
+                client.connect(self.ip,
+                            port=self.port,
                             username=self.username,
                             look_for_keys=True,
                             pkey=key,
                             timeout=self.timeout
                            )
             else:
-                raise SSHExpection("Invalid username or password")
+                raise SSHException("Invalid username or password")
                 
             
             # Paramiko by default sets the socket timeout to 0.1 seconds,
@@ -163,19 +166,19 @@ class SSHPool(pools.Pool):
             # a keepalive packet every ssh_conn_timeout seconds.
             
             if self.timeout:
-                transport = ssh.get_transport()
+                transport = client.get_transport()
                 transport.sock.settimeout(None)
                 transport.set_keepalive(self.timeout)
-            return ssh
+            return client
         
         except socket.timeout:
-            raise SSHExpection("Connect timeout")
+            raise SSHException("Connect timeout")
         except NoValidConnectionsError as novalid:
-            raise SSHExpection("Connect valid failed")
+            raise SSHException("Connect valid failed")
         except AuthenticationException as auth:
-            raise SSHExpection("Invalid username or password")
+            raise SSHException("Invalid username or password")
         except Exception as e:
-            raise SSHExpection("An exception happened")
+            raise SSHException("An exception happened")
 
     def get(self):
         """从会话池中获取 SSH 会话
@@ -183,12 +186,13 @@ class SSHPool(pools.Pool):
         2. 不存在的会话或已经失效的会话, 会新建一个会话并返回该会话
 		"""
         conn = super(SSHPool, self).get()
+        print("get: [%s]" % conn)
         if conn:
             if conn.get_transport().is_active():
                 return conn
             else:
                 conn.close()
-        return self._create()
+        return self.create()
     
     #def put(self, ssh):
     #    """将 SSH 会话添加到会话池中"""
@@ -200,12 +204,18 @@ class SSHPool(pools.Pool):
         """关闭 SSH 会话,并将其从会话池中移除"""
         ssh.close()
         ssh = None
+        print("remove: [%s]" % ','.join(self.free_items))
         if ssh in self.free_items:
             self.free_items.pop(ssh)
         if self.current_size > 0:
             self.current -= 1
-        
+
+
+if __name__ == "__main__":
+    client = SSHPool(username='root', password='****!', ip='****')
+    with client.get() as conn:
+        _, stdout, stderr = conn.exec_command("ls -l")
+        print(stdout.read().decode())     
+
+# 参考自:  https://opendev.org/openstack/cinder/commit/75ef446fef63320e9c1ed4a04e59ffbbb62b5cef?style=unified  
 ```
-
-
-
