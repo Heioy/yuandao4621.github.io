@@ -147,4 +147,4 @@ smartmontools-6.5-1.el7.x86_64
   [root@server ~]# smartctl --smart=on --offlineauto=on --saveauto=on /dev/sda
   ```
 
-  
+  注：一些硬盘是不支持`smart`的，因此虽然可以通过`smartctl`展示出来，但无法查看硬盘的详细参数。
