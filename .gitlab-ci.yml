@@ -9,6 +9,7 @@ check:
   stage: build
   script:
     - apt update -y && apt upgrade -y
+    - apt install -y lsb-release
     - lsb_release -a
 
 pages:
