@@ -2,22 +2,23 @@ default:
   image: ubuntu:20.04
 
 stages:
+  - build
   - deploy
-  - test
+
+check:
+  stage: build
+  script:
+    - apt update && apt upgrade
+    - lsb_release -a
 
 pages:
   stage: deploy
   script:
-    - echo 'Nothing to do...'
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
   artifacts:
     paths:
     - public/
   only:
   - master
-
-show:
-  stage: test
-  script:
-    - echo "show pages"
-
-
