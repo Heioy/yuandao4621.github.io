@@ -17,7 +17,8 @@
 - [x] [logrotate-Linux下的日志切割技术](./Linux/logrotate-Linux下的日志切割技术.md)
 - [x] [Linux下的inode到底是什么](./Linux/Linux下的inode到底是什么.md)
 - [x] [Linux多链路聚合技术](./Linux/Linux多链路聚合技术.md)
-- [ ] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
+- [x] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
+- [x] [Linux的运行级别](./Linux/Linux的启动级别.md)
 
 ---
 ### OperatorSystem
@@ -34,6 +35,11 @@
 - [x] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.md)
 
 ---
+### 数据库
+- [x] [oracle-19.3.0安装补丁](./数据库/oracle19c安装补丁.md)
+- [x] [oracle安装补丁问题记录](./数据库/安装19c补丁出现的问题.md)
+
+---
 ### Problem
 
-- [ ] [基于MacBook m1本地搭建Gitlab服务器](./tools/基于MacBook m1本地搭建Gitlab服务器.md)
+- [x] [基于MacBook m1本地搭建Gitlab服务器](./tools/基于MacBook m1本地搭建Gitlab服务器.md)
