@@ -36,8 +36,8 @@
 
 ---
 ### 数据库
-- [x] [oracle-19.3.0安装补丁](./数据库/oracle19c安装补丁.md)
-- [x] [oracle安装补丁问题记录](./数据库/安装19c补丁出现的问题.md)
+- [x] [oracle-19.3.0安装补丁](./数据库/oracle/oracle19c安装补丁.md)
+- [x] [oracle安装补丁问题记录](./数据库/oracle/安装19c补丁出现的问题.md)
 
 ---
 ### Problem
