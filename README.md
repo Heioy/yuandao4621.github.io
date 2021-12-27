@@ -19,6 +19,7 @@
 - [x] [Linux多链路聚合技术](./Linux/Linux多链路聚合技术.md)
 - [x] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
 - [x] [Linux的运行级别](./Linux/Linux的启动级别.md)
+- [x] [FIO硬盘性能测试工具](./Linux/FIO磁盘性能测试工具.md)
 
 ---
 ### OperatorSystem
