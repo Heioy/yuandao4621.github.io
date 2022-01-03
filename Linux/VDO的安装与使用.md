@@ -13,17 +13,15 @@
 ![](../../../WorkSpace/notes/img/vdo-1.png) 
 
 - 去重(**Deduplication**)：通过消除数据块中的多个重复块来减少存储资源的消耗。
-
+  
   原理：VDO 会在每个数据块写入存储前判断该数据块是否已经在存储区存在原始块，若是存在，VDO 不会再次将数据写入存储设备中，而是提供原始块在存储设备中的地址记录下来提供给多个重复块使用。
-
+  
   数据块中出现重复块后，多个逻辑块的地址会被映射到同一个物理块地址，这些相同的数据块被称为 `共享块`。当共享块被覆盖后，将分配新的物理块来存储新的块数据，确保映射到共享存储块的其他逻辑块地址不被修改。
-
+  
   具体实现为：数据写入 VDO 逻辑设备后，首先将数据块中为 `零` 的块设备去除，然后将除 `0` 以外的块进行去重，即相同的数据保留只保留一份，其他的数据会在去重的阶段被清理掉。
 
-  
-
 - 压缩(**Compression**)：一种数据缩减技术，保证相同的数据尽可能占据少的存储空间，一般适用于日志文件系统或数据库。
-
+  
   具体实现为：将去重后的数据通过 `LZ4` 压缩算法进行压缩。压缩后的数据以固定4KB的数据块存储在磁盘中。
 
 ### 相关组件
@@ -164,11 +162,4 @@
 # vdo growPhysical --name=my_vdo
 ```
 
-
-
-
-
 参考自: [30.3. Getting Started with VDO Red Hat Enterprise Linux 7 | Red Hat Customer Portal](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
-
-
-

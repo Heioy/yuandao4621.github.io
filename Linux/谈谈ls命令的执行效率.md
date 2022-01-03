@@ -89,9 +89,9 @@ Maximum filesystem blocks=2344615936
 32768 blocks per group, 32768 fragments per group
 8192 inodes per group
 Superblock backups stored on blocks:
-	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
-	102400000
+    32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+    4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+    102400000
 
 Allocating group tables: done
 Writing inode tables: done
@@ -126,7 +126,7 @@ Filesystem                          Size  Used Avail Use% Mounted on
 将其切分为10万个小文件，统计使用 `ls` 查看文件的时间
 
 > 若要统计文件数量，可将目录下的文件文件名写入到文件中，再进行行数统计。
->
+> 
 > #find . > /tmp/temp && wc -l /tmp/temp
 > 100001 /tmp/temp
 
@@ -136,9 +136,9 @@ Filesystem                          Size  Used Avail Use% Mounted on
 #split -n 100000 /root/data  
 
 #time ls
-real	0m0.920s
-user	0m0.609s
-sys	    0m0.289s
+real    0m0.920s
+user    0m0.609s
+sys        0m0.289s
 ```
 
 ​        这里使用 `time {command}` 来统计命令执行的时间。其中
@@ -155,13 +155,13 @@ sys	    0m0.289s
 #split -n 500000 /root/data
 
 #time ls
-real	0m8.134s
-user	0m3.943s
-sys	    0m2.983s
+real    0m8.134s
+user    0m3.943s
+sys        0m2.983s
 ```
 
 > 当文件数量达到 50万的时候，使用 `rm -rf *` 就出现了 `Argument toolong  ` 的报错
->
+> 
 > #rm -rf *
 > -bash: /bin/rm: Argument list too long
 
@@ -171,9 +171,9 @@ sys	    0m2.983s
 #split -n 1000000 /root/data
 
 #time ls
-real	0m15.427s
-user	0m8.207s
-sys	    0m4.737s
+real    0m15.427s
+user    0m8.207s
+sys        0m4.737s
 ```
 
 删除文件后再次将文件切分为 200万个小文件
@@ -182,9 +182,9 @@ sys	    0m4.737s
 #split -n 2000000 /root/data
 
 #time ls
-real	0m34.412s
-user	0m17.231s
-sys	    0m14.149s
+real    0m34.412s
+user    0m17.231s
+sys        0m14.149s
 ```
 
 再将其切分为 500万文件
@@ -193,9 +193,9 @@ sys	    0m14.149s
 #split -n 5000000 /root/data
 
 #time ls
-real	2m3.960s
-user	0m47.844s
-sys	    1m5.230s
+real    2m3.960s
+user    0m47.844s
+sys        1m5.230s
 ```
 
 最后，将文件切分为 1000万个小文件
@@ -204,9 +204,9 @@ sys	    1m5.230s
 #split -n 10000000 /root/data
 
 #time ls
-real	6m31.626s
-user	1m40.799s
-sys	    4m16.432s
+real    6m31.626s
+user    1m40.799s
+sys        4m16.432s
 ```
 
 通过不同数量的文件，可以看到 `ls` 命令会随着文件数量的增加而返回时间也随之增加。倘若不考虑操作系统的 inode 分配，那么随着文件数量的增长 ls 的执行速度可能会呈现指数增长的趋势。

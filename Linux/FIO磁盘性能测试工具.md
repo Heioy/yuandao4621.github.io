@@ -38,35 +38,33 @@ FIO 中的基本参数包含：
 
 - Threads, processes, job synchronization：使用多少的进程或线程数量
 
-  
-
 #### 常用参数
 
-| 常用参数                   | 参数说明                                                     | 参数取值(eg:)                 |
-| -------------------------- | ------------------------------------------------------------ | ----------------------------- |
-| name                       | FIO 运行任务的名称 （可选）                                  | name=fio-test                 |
-| description                | FIO 运行时的描述 （可选）                                    | description="this is a test"  |
-| loops                      | FIO 是否要循环执行该任务 （可选）                            | loops=5                       |
-| numjobs                    | 每个FIO 任务要开启多少数量的线程                             | numjobs=8                     |
-| runtime                    | FIO 任务要执行的时间，单位为s                                | runtime=300                   |
-| time_based                 | 设置后，即便FIO写完了整个磁盘，也不会退出任务。当任务的时间满足runtime设置的时间后，才会退出任务 | time_based                    |
-| startdelay                 | 延迟作业的启动时间。如果指定区间类型的数值，将从区间中选择一个随机值用来启动任务。单位为s | startdelay=10                 |
-| ramp_time                  | FIO 在执行任务时预热的时间。可以使性能测试的结果更加精确可靠。单位为s | ramp_time=60                  |
-| filename                   | 测试文件的名称，通常为硬盘的盘符名称                         | filename=/dev/sdd             |
-| pre_read                   | 在FIO下发 I/O 前，文件会被加载到内存中。当 pre_read=true 时会清除掉磁盘中的元数据，默认为false | pre_read=false                |
-| max_open_zones             | FIO 执行随机写入任务时，允许写入/读取的磁盘的区域的最大数量。 | max_open_zones=1000000        |
-| direct                     | 是否使用非缓冲I/O。默认为false                               | direct=true                   |
+| 常用参数                       | 参数说明                                                            | 参数取值(eg:)                     |
+| -------------------------- | --------------------------------------------------------------- | ----------------------------- |
+| name                       | FIO 运行任务的名称 （可选）                                                | name=fio-test                 |
+| description                | FIO 运行时的描述 （可选）                                                 | description="this is a test"  |
+| loops                      | FIO 是否要循环执行该任务 （可选）                                             | loops=5                       |
+| numjobs                    | 每个FIO 任务要开启多少数量的线程                                              | numjobs=8                     |
+| runtime                    | FIO 任务要执行的时间，单位为s                                               | runtime=300                   |
+| time_based                 | 设置后，即便FIO写完了整个磁盘，也不会退出任务。当任务的时间满足runtime设置的时间后，才会退出任务           | time_based                    |
+| startdelay                 | 延迟作业的启动时间。如果指定区间类型的数值，将从区间中选择一个随机值用来启动任务。单位为s                   | startdelay=10                 |
+| ramp_time                  | FIO 在执行任务时预热的时间。可以使性能测试的结果更加精确可靠。单位为s                           | ramp_time=60                  |
+| filename                   | 测试文件的名称，通常为硬盘的盘符名称                                              | filename=/dev/sdd             |
+| pre_read                   | 在FIO下发 I/O 前，文件会被加载到内存中。当 pre_read=true 时会清除掉磁盘中的元数据，默认为false   | pre_read=false                |
+| max_open_zones             | FIO 执行随机写入任务时，允许写入/读取的磁盘的区域的最大数量。                               | max_open_zones=1000000        |
+| direct                     | 是否使用非缓冲I/O。默认为false                                             | direct=true                   |
 | readwrite                  | I/O 模式。read、write、randwrite、randread、randrw。混合读写时默认读写比例为50%:50% | readwrite=read                |
-| percentage_random          | 随机写入时包含多少的随机数据                                 | percentage_random=30%         |
-| blocksize                  | 读取/写入时块的大小                                          | bs=1M                         |
-| zero_buffers               | 初始化所有零的缓冲区。默认用随机数填充缓冲区                 | zero_buffers                  |
-| rwmixread                  | 混合模式中读取所占的百分比                                   | rwmixread=30                  |
-| rwmixwrite                 | 混合模式中写入所占的百分比                                   | rwmixwrite=70                 |
-| refill_buffers             | FIO 在每次提交时重新填充 I/O 缓冲区。使用 zero_buffers 参数后，该参数会失效 | refill_buffers                |
-| buffer_compress_percentage | 压缩 I/O 缓冲区的百分比，配合 refill_buffers 可以降低硬盘中相邻块中数据的一致性 | buffer_compress_percentage=70 |
-| size                       | FIO 执行任务时要读取或写入的数据总和。size为百分比时将按照硬盘容量 * percentage | size=300G or size=50%         |
-| ioengine                   | FIO 任务工具时的引擎，sync, libaio, rdma...                  | ioengine=libaio               |
-| iodepth                    | 任务执行时的 I/O 队列深度的单元数。任务的线程数 = numjobs * iodepth | iodepth=16                    |
+| percentage_random          | 随机写入时包含多少的随机数据                                                  | percentage_random=30%         |
+| blocksize                  | 读取/写入时块的大小                                                      | bs=1M                         |
+| zero_buffers               | 初始化所有零的缓冲区。默认用随机数填充缓冲区                                          | zero_buffers                  |
+| rwmixread                  | 混合模式中读取所占的百分比                                                   | rwmixread=30                  |
+| rwmixwrite                 | 混合模式中写入所占的百分比                                                   | rwmixwrite=70                 |
+| refill_buffers             | FIO 在每次提交时重新填充 I/O 缓冲区。使用 zero_buffers 参数后，该参数会失效               | refill_buffers                |
+| buffer_compress_percentage | 压缩 I/O 缓冲区的百分比，配合 refill_buffers 可以降低硬盘中相邻块中数据的一致性              | buffer_compress_percentage=70 |
+| size                       | FIO 执行任务时要读取或写入的数据总和。size为百分比时将按照硬盘容量 * percentage              | size=300G or size=50%         |
+| ioengine                   | FIO 任务工具时的引擎，sync, libaio, rdma...                              | ioengine=libaio               |
+| iodepth                    | 任务执行时的 I/O 队列深度的单元数。任务的线程数 = numjobs * iodepth                  | iodepth=16                    |
 
 #### 定义 FIO 任务
 
@@ -151,4 +149,3 @@ file1: (groupid=0, jobs=72): err= 0: pid=165889: Tue Jun  8 17:08:28 2021
 Run status group 0 (all jobs):
   WRITE: bw=316MiB/s (331MB/s), 316MiB/s-316MiB/s (331MB/s-331MB/s), io=93.3GiB (100GB), run=302533-302533msec
 ```
-
