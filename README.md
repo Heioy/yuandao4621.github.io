@@ -21,15 +21,16 @@
 - [x] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
 - [x] [Linux的运行级别](./Linux/Linux的启动级别.md)
 - [x] [FIO硬盘性能测试工具](./Linux/FIO磁盘性能测试工具.md)
+- [x] [find查找文件的高级用法](./Linux/find查找文件的高级用法.md)
 
 ---
 
 ### OperatorSystem
 
-- [ ] [简述操作系统](./操作系统/简述操作系统.md)
-- [ ] [计算机启动过程](./操作系统/计算机启动过程.md)
-- [ ] [操作系统结构](./操作系统/操作系统结构.md)
-- [ ] [进程的3种状态](./操作系统/进程的3种状态.md)
+- [x] [简述操作系统](./操作系统/简述操作系统.md)
+- [x] [计算机启动过程](./操作系统/计算机启动过程.md)
+- [x] [操作系统结构](./操作系统/操作系统结构.md)
+- [x] [进程的3种状态](./操作系统/进程的3种状态.md)
 - [ ] [GRUB启动引导项是怎么工作的](./操作系统/GRUB启动引导项是怎么工作的.md)
 
 ---
@@ -38,6 +39,7 @@
 
 - [x] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.md)
 - [x] [requests会话的使用](./Python/requests会话的使用.md)
+- [x] [unittestreport使用](./Python/unittestreport-自动化测试报告生成.md)
 
 ---
 
@@ -45,6 +47,7 @@
 
 - [x] [oracle-19.3.0安装补丁](./数据库/oracle/oracle19c安装补丁.md)
 - [x] [oracle安装补丁问题记录](./数据库/oracle/安装19c补丁出现的问题.md)
+- [x] [Oracle导出数据表空间](./数据库/oracle/Oracle导出数据表空间.md)
 
 ---
 
