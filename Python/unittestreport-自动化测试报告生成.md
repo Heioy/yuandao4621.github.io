@@ -78,15 +78,15 @@ if __name__ == '__main__':
 
   - 测试报告类型1
 
-    ![style1](../../../WorkSpace/notes/img/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF%E7%B1%BB%E5%9E%8B1-6610536.png)
+    ![style1](../img/测试报告模板类型1.png)
 
   -  测试报告类型2
 
-    ![style2](../../../WorkSpace/notes/img/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF%E7%B1%BB%E5%9E%8B2-6610562.png)
+    ![style2](../img/测试报告模板类型2.png)
 
   - 测试报告类型3
 
-    ![style3](../../../WorkSpace/notes/img/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF%E7%B1%BB%E5%9E%8B3-6610580.png)
+    ![style3](../img/测试报告模板类型3.png)
 
 - `tester`： 测试人员名称
 
