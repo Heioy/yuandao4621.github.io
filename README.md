@@ -22,6 +22,7 @@
 - [x] [Linux的运行级别](./Linux/Linux的启动级别.md)
 - [x] [FIO硬盘性能测试工具](./Linux/FIO磁盘性能测试工具.md)
 - [x] [find查找文件的高级用法](./Linux/find查找文件的高级用法.md)
+- [x] [ubuntu禁用软件包更新](./Linux/ubuntu禁用软件包更新.md)
 
 ---
 
