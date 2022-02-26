@@ -49,6 +49,11 @@
 - [x] [oracle-19.3.0安装补丁](./数据库/oracle/oracle19c安装补丁.md)
 - [x] [oracle安装补丁问题记录](./数据库/oracle/安装19c补丁出现的问题.md)
 - [x] [Oracle导出数据表空间](./数据库/oracle/Oracle导出数据表空间.md)
+- [x] [数据库集群技术介绍](./数据库/oracle/数据库集群技术介绍.md)
+- [x] [Oracle高可用服务组件-OHAS的功能](./数据库/oracle/Oracle高可用服务组件-OHAS的功能.md)
+- [x] [CSS启动过程日志分析](./数据库/oracle/CSS启动过程日志分析.md)
+- [x] [CSS在集群中的功能](./数据库/oracle/CSS在集群中的功能.md)
+
 
 ---
 
