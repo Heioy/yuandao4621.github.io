@@ -1,0 +1,25 @@
+default:
+  image: ubuntu:20.04
+
+stages:
+  - build
+  - deploy
+
+check:
+  stage: build
+  script:
+    - apt update -y && apt upgrade -y
+    - apt install -y lsb-release
+    - lsb_release -a
+
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public/
+  only:
+    - main
