@@ -22,7 +22,7 @@ title: yuandao's blog
 email: yuandao4621@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   "今天也是充满希望的一天!"
-baseurl: "/docs/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yuandao4621.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
 twitter_username: jekyllrb
