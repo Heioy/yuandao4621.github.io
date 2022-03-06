@@ -32,10 +32,15 @@ github_username:  jekyll
 sidebar: true
 sidebar-avtar: "./assert/avator.jpeg"
 
+# Ficture Tags
+feature-tags: true
+feature-condition-size: 1
+
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+# theme: minima
+# plugins:
+#   - jekyll-feed
+permalink: pretty
 
 # Exclude from processing.
 # The following items will not be processed, by default.
