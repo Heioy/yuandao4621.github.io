@@ -1,63 +1,41 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title:          远道的博客
+description:    "Rain is a simple and clean Jekyll theme with focus on content."
+url:           https://github.com/Yuandao4621/yuandao4621.github.io
 
-title: yuandao's blog
-email: yuandao4621@outlook.com
-description: >- # this means to ignore newlines until "baseurl:"
-  "今天也是充满希望的一天!"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yuandao4621.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-markdown: kramdown
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# SideBar settings
-sidebar: true
-sidebar-avtar: "./assert/avator.jpeg"
-
-# Ficture Tags
-feature-tags: true
-feature-condition-size: 1
+# Author
+author:
+  name:         远道
+  email:        yuandao4621@outlook.com
+  # url:          https://inelaah.com
 
 # Build settings
-# theme: minima
-# plugins:
-#   - jekyll-feed
-permalink: pretty
+markdown:       kramdown
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Related posts settings
+related_posts_section:
+  max_count:        5
+  min_common_tags:  2
+
+# Links to social media
+social:
+  email: yuandao4621@outlook.com
+  jianshu: https://www.jianshu.com/u/c68fc45881f2
+  github: https://github.com/Yuandao4621/yuandao4621.github.io
+  twitter: https://twitter.com
+  linkedin: https://ba.linkedin.com/in/inela-avdic-hukic-322354131

@@ -1,62 +1,133 @@
-## Blog
+# Rain
 
-博客地址: [归源 - 简书](https://www.jianshu.com/u/c68fc45881f2)
+Rain is a simple and clean Jekyll theme with focus on content. It's a fork of [Tale theme](https://github.com/chesterhow/tale) with additional customizations.
 
-[TOC]
+![](https://github.com/inelaah/rain/blob/master/images/screenshot.png)
 
----
-
-### Linux
-
-- [x] [Linux文件系统的演变](./Linux/Linux文件系统的演变.md)
-- [x] [什么是文件描述符](./Linux/什么是文件描述符.md)
-- [x] [一切皆文件](./Linux/一切皆文件.md)
-- [x] [Linux目录结构详解](./Linux/Linux目录结构详解.md)
-- [x] [谈谈ls命令的执行效率](./Linux/谈谈ls命令的执行效率.md)
-- [x] [VDO的安装与使用](./Linux/VDO的安装与使用.md)
-- [x] [which和whereis的区别](./Linux/which和whereis的区别.md)
-- [x] [logrotate-Linux下的日志切割技术](./Linux/logrotate-Linux下的日志切割技术.md)
-- [x] [Linux下的inode到底是什么](./Linux/Linux下的inode到底是什么.md)
-- [x] [Linux多链路聚合技术](./Linux/Linux多链路聚合技术.md)
-- [x] [Linux硬盘检测工具-smartctl](./Linux/Linux硬盘检测工具-smartctl.md)
-- [x] [Linux的运行级别](./Linux/Linux的启动级别.md)
-- [x] [FIO硬盘性能测试工具](./Linux/FIO磁盘性能测试工具.md)
-- [x] [find查找文件的高级用法](./Linux/find查找文件的高级用法.md)
-- [x] [ubuntu禁用软件包更新](./Linux/ubuntu禁用软件包更新.md)
-
----
-
-### OperatorSystem
-
-- [x] [简述操作系统](./操作系统/简述操作系统.md)
-- [x] [计算机启动过程](./操作系统/计算机启动过程.md)
-- [x] [操作系统结构](./操作系统/操作系统结构.md)
-- [x] [进程的3种状态](./操作系统/进程的3种状态.md)
-- [ ] [GRUB启动引导项是怎么工作的](./操作系统/GRUB启动引导项是怎么工作的.md)
-
----
-
-### Python
-
-- [x] [基于paramiko的二次封装](./Python/基于paramiko的二次封装.md)
-- [x] [requests会话的使用](./Python/requests会话的使用.md)
-- [x] [unittestreport使用](./Python/unittestreport-自动化测试报告生成.md)
-
----
-
-### 数据库
-
-- [x] [oracle-19.3.0安装补丁](./数据库/oracle/oracle19c安装补丁.md)
-- [x] [oracle安装补丁问题记录](./数据库/oracle/安装19c补丁出现的问题.md)
-- [x] [Oracle导出数据表空间](./数据库/oracle/Oracle导出数据表空间.md)
-- [x] [数据库集群技术介绍](./数据库/oracle/数据库集群技术介绍.md)
-- [x] [Oracle高可用服务组件-OHAS的功能](./数据库/oracle/Oracle高可用服务组件-OHAS的功能.md)
-- [x] [CSS启动过程日志分析](./数据库/oracle/CSS启动过程日志分析.md)
-- [x] [CSS在集群中的功能](./数据库/oracle/CSS在集群中的功能.md)
+## Features
+- Compatible with GitHub Pages
+- Responsive design
+- Syntax highlighting
+- Markdown and HTML text formatting
+- Pagination of posts
+- Related articles section
+- Links to social media
 
 
----
+## Getting Started
 
-### Problem
+You will need to install Jekyll on your machine. Installation depends on your operating system and it is explained [here](https://jekyllrb.com/docs/installation/).
 
-- [x] [基于MacBook m1本地搭建Gitlab服务器](./tools/基于MacBook m1本地搭建Gitlab服务器.md)
+Then create a new directory and clone this repository:
+
+```bash
+mkdir rain
+cd rain
+git clone https://github.com/inelaah/rain.git
+```
+
+Install all dependencies:
+
+```bash
+bundle install
+```
+
+## Site Configuration
+
+There is a configuration file `_config.yml` in root directory. You should overwrite it to fit to your needs.
+
+An example of `_config.yml` looks like this:
+
+```bash
+# Site settings
+title:          Rain
+description:    "Rain is a simple and clean Jekyll theme with focus on content."
+url:            https://github.com/inelaah/rain
+
+# Author
+author:
+  name:         Inela Avdic Hukic
+  email:        inelaah@gmail.com
+  url:          https://inelaah.com
+
+# Build settings
+markdown:       kramdown
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Related posts settings
+related_posts_section:
+  max_count:        5
+  min_common_tags:  2
+
+# Links to social media
+social:
+  email: inelaah@gmail.com
+  github: https://github.com/inelaah
+  twitter: https://twitter.com
+  linkedin: https://ba.linkedin.com/in/inela-avdic-hukic-322354131
+```
+
+## Favicons
+
+It is recommended to put your own favicons:
+
+- `apple-touch-icon.png` (180x180)
+- `favicon-32x32.png` (32x32)
+- `favicon-16x16.png` (16x16)
+- `mstile-150x150.png` (150x150)
+- `android-chrome-192x192.png` (192x192)
+- `android-chrome-512x512.png` (512x512)
+
+in `/assets` directory. They're easily created via [Favicon Generator](https://realfavicongenerator.net/).
+
+
+## Related Articles
+
+Related articles section is based on article tags. For every post that you want to have this section you should define tags.
+To include related articles in the bottom of the content you should define `related_posts_section` property in configuration file.
+It contains two fields: `max_count` and `min_common_tags`:
+- `max_count` represents the maximum number of related articles shown on a single article.
+- `min_common_tags` represents the minimum number of common tags for two articles to become related articles.
+
+## Links to social media
+
+To include links to social media in the top right corner of your page you need to define `social` property.
+It contains email, GitHub, Twitter and LinkedIn fields. You can leave out any of these if you don't want them to show up on your page.
+
+## Customizing Rain theme
+
+If you want to customize Rain theme you can fork this project and make some changes. If you just want to change the style then you can find Sass files in `_sass/rain` directory.
+
+## Adding your own posts
+
+You can see an example of post structure in `_posts` directory. After you clone this project you should clean the `_posts` directory and add your own posts.
+
+## Build and serve
+
+```
+bundle exec jekyll serve
+```
+
+Head over to http://127.0.0.1:4000/ to see your page.
+
+## License
+
+Rain is licensed under the MIT license. Check the [LICENSE](LICENSE.md) file for details.
+
+## Author
+
+[Inela Avdic Hukic](https://github.com/inelaah)
